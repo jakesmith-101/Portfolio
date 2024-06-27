@@ -6,7 +6,9 @@ import Header from './Header';
 const App: React.FC = _ => {
   return <div className="App">
     <Header />
-    <Portfolio />
+    <div>
+      <Portfolio />
+    </div>
   </div>
 }
 
