@@ -3,6 +3,7 @@ import '../styles/App.css';
 
 const App: React.FC = _ => {
   return <div className="App">
+    test
   </div>
 }
 
