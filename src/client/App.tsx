@@ -1,6 +1,6 @@
 import * as React from 'react';
 import '../styles/App.css';
-import Portfolio from './Portfolio';
+import Portfolio from './Portfolio/Body';
 import Header from './Header';
 
 const App: React.FC = _ => {
