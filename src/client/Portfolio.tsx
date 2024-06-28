@@ -20,6 +20,7 @@ const Portfolio: React.FC<{}> = _ => {
             .then(setGames)
             .catch(setError);
     }, [work]);
+
     return <>
         {error}
         <div>
