@@ -12,3 +12,10 @@ const Card: React.FC<CardProps> = ({ repo }) => {
 }
 
 export default Card;
+
+
+
+/*
+get readme:
+/repos/{owner}/{repo}/readme
+*/
