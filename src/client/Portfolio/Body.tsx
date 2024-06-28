@@ -1,5 +1,6 @@
 import * as React from 'react';
 import RepoType from '../../types/Repository';
+import Cards from './Cards';
 
 const work = "jakesmith-101"; // `https://api.github.com/users/${work}/repos`
 const games = "ZiarayZ"; //      `https://api.github.com/users/${games}/repos`
@@ -25,10 +26,10 @@ const Portfolio: React.FC<{}> = _ => {
     return <>
         {error}
         <div>
-            {workRepos !== null ? <pre>{JSON.stringify(workRepos, null, 2)}</pre> : 'Loading...'}
+            {workRepos !== null ? <Cards repos={workRepos} /> : 'Loading...'}
         </div>
         <div>
-            {gameRepos !== null ? <pre>{JSON.stringify(gameRepos, null, 2)}</pre> : 'Loading...'}
+            {gameRepos !== null ? <Cards repos={gameRepos} /> : 'Loading...'}
         </div>
     </>
 }
