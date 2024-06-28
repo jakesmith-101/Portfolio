@@ -5,10 +5,10 @@ import Card from './Card';
 interface CardsProps {
     repos: RepoType;
 }
-const Cards: React.FC<CardsProps> = props => {
+const Cards: React.FC<CardsProps> = ({ repos }) => {
     return <div>
         {
-            props.repos.map(card => <Card key={card.id} repo={card} />)
+            repos.map(card => <Card key={card.id} repo={card} />)
         }
     </div>
 }

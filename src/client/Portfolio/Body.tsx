@@ -25,12 +25,8 @@ const Portfolio: React.FC<{}> = _ => {
 
     return <>
         {error}
-        <div>
-            {workRepos !== null ? <Cards repos={workRepos} /> : 'Loading...'}
-        </div>
-        <div>
-            {gameRepos !== null ? <Cards repos={gameRepos} /> : 'Loading...'}
-        </div>
+        {workRepos !== null ? <Cards repos={workRepos} /> : 'Loading...'}
+        {gameRepos !== null ? <Cards repos={gameRepos} /> : 'Loading...'}
     </>
 }
 
