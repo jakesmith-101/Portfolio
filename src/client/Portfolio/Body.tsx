@@ -26,11 +26,11 @@ const Portfolio: React.FC<{}> = _ => {
     return <div>
         {error === null ? <>
             <div>
-                <h3><a href='https://github.com/jakesmith-101'>Jake Smith</a></h3>
+                <h3><a href='https://github.com/jakesmith-101'>Personal Account</a></h3>
                 {workRepos !== null ? <Cards repos={workRepos} /> : 'Loading...'}
             </div>
             <div>
-                <h3><a href='https://github.com/ZiarayZ'>ZiarayZ</a></h3>
+                <h3><a href='https://github.com/ZiarayZ'>Games Account</a></h3>
                 {gameRepos !== null ? <Cards repos={gameRepos} /> : 'Loading...'}
             </div>
         </> : <div>
