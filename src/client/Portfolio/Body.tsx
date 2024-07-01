@@ -10,7 +10,7 @@ const Portfolio: React.FC<{}> = _ => {
 
     const [workRepos, setWork] = React.useState<RepoType | null>(null);
     const [gameRepos, setGames] = React.useState<RepoType | null>(null);
-    const [error, setError] = React.useState<any>(null);
+    const [error, setError] = React.useState<any | null>(null);
 
     React.useEffect(() => {
         fetch(`https://api.github.com/users/${work}/repos`)
@@ -23,11 +23,21 @@ const Portfolio: React.FC<{}> = _ => {
             .catch(setError);
     }, [work]);
 
-    return <>
-        {error}
-        {workRepos !== null ? <Cards repos={workRepos} /> : 'Loading...'}
-        {gameRepos !== null ? <Cards repos={gameRepos} /> : 'Loading...'}
-    </>
+    return <div>
+        {error === null ? <>
+            <div>
+                <h3><a href='https://github.com/jakesmith-101'>Jake Smith</a></h3>
+                {workRepos !== null ? <Cards repos={workRepos} /> : 'Loading...'}
+            </div>
+            <div>
+                <h3><a href='https://github.com/ZiarayZ'>ZiarayZ</a></h3>
+                {gameRepos !== null ? <Cards repos={gameRepos} /> : 'Loading...'}
+            </div>
+        </> : <div>
+            <h3>Error:</h3>
+            {error}
+        </div>}
+    </div>
 }
 
 // name, description
