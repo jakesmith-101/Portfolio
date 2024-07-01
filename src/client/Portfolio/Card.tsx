@@ -5,12 +5,12 @@ import RepoType from '../../types/Repository';
 interface CardProps {
     repo: RepoType[0];
 }
-const Card: React.FC<CardProps> = ({ repo }) => {
+const Card: React.FC<CardProps> = React.memo(({ repo: { name, description } }) => {
     return <StyledCard>
-        <h6>{repo.name}</h6>
-        <p>{repo.description}</p>
+        <h6>{name}</h6>
+        <p>{description}</p>
     </StyledCard>;
-}
+})
 
 export default Card;
 
