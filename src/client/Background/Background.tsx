@@ -15,7 +15,10 @@ const Background: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
     }, []);
 
 
-    return <>
+    return <div>
+        <div>
+            {children}
+        </div>
         <div id="scene">
             <div className="sky">
                 <div className="stars layer" data-depth="0.3">
@@ -23,12 +26,7 @@ const Background: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
                 </div>
             </div>
         </div>
-        <div className="container">
-            <div className="top">
-                {children}
-            </div>
-        </div>
-    </>
+    </div>
 }
 
 const Stars: React.FC<{}> = _ => {
