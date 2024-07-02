@@ -17,13 +17,15 @@ const Background: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
 
     return <div id="scene">
         <Sky>
-            <Stars data-depth="0.3">
-                {(new Array(80)).map(star => <Star key={star} position={{ left: getRandomInt(0, 100), top: getRandomInt(0, 100) }} size={getRandomInt(0, 6)} animationDelay={getRandomInt(0, 5)} />)}
+            <Stars>
+                <div className="layer" data-depth="0.3">
+                    {(new Array(80)).map(star => <Star key={star} position={{ left: getRandomInt(0, 100), top: getRandomInt(0, 100) }} size={getRandomInt(0, 6)} animationDelay={getRandomInt(0, 5)} />)}
+                </div>
             </Stars>
         </Sky>
         <SkyContainer>
             <ContainerTop>
-                <div className="layer">
+                <div className="layer" data-depth="0.1">
                     {children}
                 </div>
             </ContainerTop>
