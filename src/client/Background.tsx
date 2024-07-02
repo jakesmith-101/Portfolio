@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Parallax from 'parallax-js';
-import { Sky, Star, Stars } from '../styles/Components';
+import { Sky, Star, Stars, SkyContainer, ContainerTop } from '../styles/Components';
 
 const Background: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
     React.useEffect(() => {
@@ -21,9 +21,13 @@ const Background: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
                 {new Array(80).map(star => <Star key={star} />)}
             </Stars>
         </Sky>
-        <div className="layer">
-            {children}
-        </div>
+        <SkyContainer>
+            <ContainerTop>
+                <div className="layer">
+                    {children}
+                </div>
+            </ContainerTop>
+        </SkyContainer>
     </div>
 }
 

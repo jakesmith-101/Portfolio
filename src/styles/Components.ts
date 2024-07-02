@@ -98,3 +98,13 @@ export const Stars = styled.div`
         }
     }
 `;
+export const SkyContainer = styled.div`
+	position: absolute;
+	height: 100vh;
+	width: 100%;
+`;
+export const ContainerTop = styled.div`
+    position: relative;
+    height: 75vh;
+    width: 100 %;
+`;
