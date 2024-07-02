@@ -18,7 +18,7 @@ const Background: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
     return <div id="scene">
         <div className="sky">
             <div className="stars layer" data-depth="0.3">
-                {(new Array(80)).map(star => <div key={star} className="star" />)}
+                <Stars count={80} />
             </div>
         </div>
         <div className="container">
@@ -27,6 +27,12 @@ const Background: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
             </div>
         </div>
     </div>
+}
+
+const Stars: React.FC<{ count: number }> = ({ count }) => {
+    return <>
+        {(new Array(count)).map(star => <div key={star} className="star"></div>)}
+    </>
 }
 
 export default Background;
