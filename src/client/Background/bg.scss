@@ -1,4 +1,3 @@
-@import "compass";
 // Styles taken/transformed from: https://codepen.io/CameronFitzwilliam/pen/ZJoENR
 
 .container {
@@ -24,7 +23,7 @@
     &>* {
         position: absolute;
         background: rgba(241, 241, 241, 1);
-        @include border-radius(50px);
+        border-radius: 50px;
         animation: twinkle 2s infinite;
         transition-timing-function: ease-in-out;
     }
@@ -79,6 +78,5 @@
     height: 100vh;
     width: 100%;
     background-color: #c5cfb7; // Old browsers
-    @include filter-gradient(#c5cfb7, #082d47, horizontal); // IE6-9 fallback on horizontal gradient
-    @include background-image(radial-gradient(center, ellipse cover, #c5cfb7 0%, #84ad98 20%, #5f9986 39%, #5f9986 50%, #5f9986 60%, #4a8974 72%, #326565 84%, #082d47 100%));
+    background-image: radial-gradient(center, ellipse cover, #c5cfb7 0%, #84ad98 20%, #5f9986 39%, #5f9986 50%, #5f9986 60%, #4a8974 72%, #326565 84%, #082d47 100%);
 }
