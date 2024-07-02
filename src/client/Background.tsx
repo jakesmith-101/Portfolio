@@ -19,7 +19,7 @@ const Background: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
         <Sky>
             <Stars>
                 <div className="layer" data-depth="0.3">
-                    {(new Array(80)).map(star => <Star key={star} position={{ left: getRandomInt(0, 100), top: getRandomInt(0, 100) }} size={getRandomInt(0, 6)} animationDelay={getRandomInt(0, 5)} />)}
+                    {(new Array(80)).map(star => <Star key={star} position={{ left: getRandomInt(0, 100), top: getRandomInt(0, 100) }} size={getRandomInt(0, 6)} animationDelay={getRandomInt(0, 5)}>RENDER ME PLS!</Star>)}
                 </div>
             </Stars>
         </Sky>
