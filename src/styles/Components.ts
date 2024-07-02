@@ -11,7 +11,6 @@ export const StyledCards = styled.div`
     gap: 32px;
     flex-wrap: wrap;
     align-items: center;
-    background-color: white;
 `;
 
 export const StyledCard = styled.div`
@@ -22,6 +21,7 @@ export const StyledCard = styled.div`
     padding: 8px;
     word-wrap: break-word;
 
+    background-color: white;
     box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.5);
 `;
 
