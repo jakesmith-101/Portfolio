@@ -22,7 +22,7 @@ const Background: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
             </div>
         </div>
         <div className="container">
-            <div className="top layer" data-depth="0.1">
+            <div className="top layer" data-depth="1">
                 {children}
             </div>
         </div>
