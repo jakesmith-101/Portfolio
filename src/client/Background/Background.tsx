@@ -21,7 +21,7 @@ const Background: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
                 <Stars />
             </div>
         </div>
-        <div>
+        <div className="cards layer" data-depth="0">
             {children}
         </div>
     </div>
