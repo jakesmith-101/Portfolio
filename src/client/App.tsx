@@ -5,9 +5,9 @@ import Background from './Background';
 
 const App: React.FC = _ => {
   return <div className="App">
-    <Header />
+    <Background />
     <div>
-      <Background />
+      <Header />
       <Portfolio />
     </div>
   </div>
