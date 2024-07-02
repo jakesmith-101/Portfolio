@@ -1,12 +1,4 @@
 // Styles taken/transformed from: https://codepen.io/CameronFitzwilliam/pen/ZJoENR
-#scene {
-    position: fixed;
-    height: 100vh;
-    width: 100%;
-    overflow: scroll;
-}
-
-
 // Stars
 .stars {
     top: 0;
@@ -70,7 +62,7 @@
 
 .sky {
     position: fixed;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     background-color: #c5cfb7; // Old browsers
     background-image: radial-gradient(ellipse, #c5cfb7 0%, #84ad98 20%, #5f9986 39%, #5f9986 50%, #5f9986 60%, #4a8974 72%, #326565 84%, #082d47 100%);
