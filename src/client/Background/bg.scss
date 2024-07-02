@@ -1,13 +1,6 @@
 // Styles taken/transformed from: https://codepen.io/CameronFitzwilliam/pen/ZJoENR
-
-.container {
-    height: 100vh;
-    width: 100%;
-}
-
-.top {
-    height: 75vh;
-    width: 100%;
+#scene {
+    z-index: -1;
 }
 
 // Stars

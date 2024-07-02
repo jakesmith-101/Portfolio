@@ -7,7 +7,7 @@ export const StyledCards = styled.div`
     gap: 32px;
     flex-wrap: wrap;
     align-items: center;
-    margin: 5%;
+    padding: 5%;
 `;
 
 export const StyledCard = styled.div`
