@@ -5,11 +5,10 @@ import Background from './Background';
 
 const App: React.FC = _ => {
   return <div className="App">
-    <Background />
-    <div className="layer">
+    <Background>
       <Header />
       <Portfolio />
-    </div>
+    </Background>
   </div>
 }
 
