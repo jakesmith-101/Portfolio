@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Parallax from 'parallax-js';
-import './bg';
+import './bg.scss';
 
 const Background: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
     React.useEffect(() => {
