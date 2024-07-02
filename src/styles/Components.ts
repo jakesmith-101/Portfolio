@@ -2,10 +2,6 @@ import { styled } from "styled-components";
 
 
 // Component Styles
-export const StyledTitle = styled.h1`
-    margin: 0;
-`;
-
 export const StyledCards = styled.div`
     display: flex;
     gap: 32px;

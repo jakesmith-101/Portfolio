@@ -6,7 +6,6 @@ import Background from './Background/Background';
 const App: React.FC = _ => {
   return <div className="App">
     <Background>
-      <Header />
       <Portfolio />
     </Background>
   </div>
