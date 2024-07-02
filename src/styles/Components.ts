@@ -1,4 +1,4 @@
-import { keyframes, styled } from "styled-components";
+import { css, keyframes, styled } from "styled-components";
 
 
 // Component Styles
@@ -49,10 +49,19 @@ export const Sky = styled.div`
     height: 100vh;
     width: 100%;
     background-color: #c5cfb7; // Old browsers
-    @include filter-gradient(#c5cfb7, #082d47, horizontal); // IE6-9 fallback on horizontal gradient
-    @include background-image(radial-gradient(center, ellipse cover, #c5cfb7 0%, #84ad98 20%, #5f9986 39%, #5f9986 50%, #5f9986 60%, #4a8974 72%, #326565 84%, #082d47 100%));
+    filter-gradient: #c5cfb7, #082d47, horizontal;
+    background-image: radial-gradient(center, ellipse cover, #c5cfb7 0%, #84ad98 20%, #5f9986 39%, #5f9986 50%, #5f9986 60%, #4a8974 72%, #326565 84%, #082d47 100%);
 `;
-export const Star = styled.div``;
+
+
+export const Star = styled.div<{ position: { top: number, left: number }, size: number, animationDelay: number }>`
+    position: relative;
+    top: ${p => p.position.top * 0.01}%;
+    left: ${p => p.position.left * 0.01}%;
+    width: ${p => p.size}px;
+    height: ${p => p.size}px;
+    animation-delay: ${p => p.animationDelay}s;
+`;
 export const Stars = styled.div`
     top: 0;
     left: 0;
@@ -63,39 +72,9 @@ export const Stars = styled.div`
     &>* {
         position: absolute;
         background: rgba(241, 241, 241, 1);
-        @include border-radius(50px);
+        border-radius: 50px;
         animation: ${twinkle} 2s infinite;
         transition-timing-function: ease-in-out;
-    }
-
-    @for $i from 1 through (20) {
-        $top: random(100);
-        $left: random(100);
-        $size: random(6)+0px;
-
-        ${Star}:nth-of-type(#{$i}) {
-            position: relative;
-            top: $top * 1%;
-            left: $left * 1%;
-            width: $size;
-            height: $size;
-            animation-delay: random(5) + s;
-        }
-    }
-
-    @for $i from 21 through (40) {
-        $top: random(100);
-        $left: random(100);
-        $size: random(6)+0px;
-
-        ${Star}:nth-of-type(#{$i}) {
-            position: relative;
-            top: $top * 1%;
-            left: $left * 1%;
-            width: $size;
-            height: $size;
-            animation-delay: random(5) + s;
-        }
     }
 `;
 export const SkyContainer = styled.div`

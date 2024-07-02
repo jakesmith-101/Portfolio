@@ -18,7 +18,7 @@ const Background: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
     return <div id="scene">
         <Sky>
             <Stars data-depth="0.3">
-                {new Array(80).map(star => <Star key={star} />)}
+                {(new Array(80)).map(star => <Star key={star} position={{ left: getRandomInt(0, 100), top: getRandomInt(0, 100) }} size={getRandomInt(0, 6)} animationDelay={getRandomInt(0, 5)} />)}
             </Stars>
         </Sky>
         <SkyContainer>
@@ -29,6 +29,15 @@ const Background: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
             </ContainerTop>
         </SkyContainer>
     </div>
+}
+
+// For spreading Stars
+function getRandomInt(min: number, max: number) {
+    if (min < max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    } else return Math.ceil(min);
 }
 
 export default Background;
