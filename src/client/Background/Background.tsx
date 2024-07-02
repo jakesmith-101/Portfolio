@@ -15,18 +15,20 @@ const Background: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
     }, []);
 
 
-    return <div id="scene">
-        <div className="sky">
-            <div className="stars layer" data-depth="0.3">
-                <Stars />
+    return <>
+        <div id="scene">
+            <div className="sky">
+                <div className="stars layer" data-depth="0.3">
+                    <Stars />
+                </div>
             </div>
         </div>
         <div className="container">
-            <div className="top layer" data-depth="1">
+            <div className="top">
                 {children}
             </div>
         </div>
-    </div>
+    </>
 }
 
 const Stars: React.FC<{}> = _ => {
