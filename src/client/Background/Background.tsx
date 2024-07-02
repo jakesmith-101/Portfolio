@@ -15,16 +15,14 @@ const Background: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
     }, []);
 
 
-    return <div>
+    return <div id="scene">
+        <div className="sky">
+            <div className="stars layer" data-depth="0.3">
+                <Stars />
+            </div>
+        </div>
         <div>
             {children}
-        </div>
-        <div id="scene">
-            <div className="sky">
-                <div className="stars layer" data-depth="0.3">
-                    <Stars />
-                </div>
-            </div>
         </div>
     </div>
 }
