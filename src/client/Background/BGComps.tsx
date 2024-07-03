@@ -18,7 +18,7 @@ export const Sky = styled.div`
     position: fixed;
     top: 0;
     left: 0;
-    height: 100%;
+    height: 100vh;
     width: 100%;
     overflow: hidden;
     background-color: #c5cfb7; // Old browsers
@@ -29,15 +29,9 @@ export const Stars = styled.div`
     top: 0;
     left: 0;
     right: 0;
+    width: 100%;
+    height: 100%;
     z-index: -1;
-
-    &>* {
-        position: absolute;
-        background: rgba(241, 241, 241, 1);
-        border-radius: 50px;
-        animation: ${twinkle} 2s infinite;
-        transition-timing-function: ease-in-out;
-    }
 `;
 
 export const Star = styled.div<{ top: number, left: number, size: number, delay: number }>`
@@ -46,5 +40,10 @@ export const Star = styled.div<{ top: number, left: number, size: number, delay:
     left: ${p => p.left * 0.01}%;
     width: ${p => p.size}px;
     height: ${p => p.size}px;
+    border-radius: 50px;
     animation-delay: ${p => p.delay}s;
+    
+    background: rgba(241, 241, 241, 1);
+    animation: ${twinkle} 2s infinite;
+    transition-timing-function: ease-in-out;
 `;
