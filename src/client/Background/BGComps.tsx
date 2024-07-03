@@ -58,5 +58,5 @@ export const Bubble = styled.div<{ first: tAnim, second: tAnim, third: tAnim, fo
     animation: ${updown} ${p => p.first} ${p => p.t1}s infinite,
         ${leftright} ${p => p.second} ${p => p.t2}s infinite,
             ${vastag} ${p => p.third} ${p => p.t3}s infinite,
-                ${forog} ${p => p.fourth} ${p => p.t4}s infinite,
+                ${forog} ${p => p.fourth} ${p => p.t4}s infinite;
 `;
