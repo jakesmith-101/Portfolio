@@ -33,22 +33,6 @@ export const Lamp = styled.div`
 export const Region = styled.div`
     background: radial - gradient(#500, #000);
     margin: 0;
-
-    ${Lamp}::after {
-        content: ' ';
-        display: block;
-        position: absolute;
-        background: linear - gradient(rgba(255, 255, 255, .6), rgba(128, 128, 255, .3));
-        width: 4vh;
-        height: 70vh;
-        margin - left: -17vh;
-        left: 50 %;
-        bottom: 20vh;
-        z - index: 2;
-        border - radius: 1vh 1vh 2vh 2vh;
-        filter: blur(.5vh);
-        transform: skewX(-2deg);
-    }
 `;
 
 
