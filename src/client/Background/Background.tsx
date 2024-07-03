@@ -10,7 +10,7 @@ const Background: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
         <Lamp>
             <Glass>
                 { // this is quite intensive to render btw
-                    [...new Array(5)].map((_, id) => <Bubble
+                    [...new Array(8)].map((_, id) => <Bubble
                         key={id}
                         first={C.pickone(animTypes)}
                         t1={C.integer({ min: 15, max: 60 })}
