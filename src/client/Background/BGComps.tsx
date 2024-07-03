@@ -40,11 +40,11 @@ export const Stars = styled.div`
     }
 `;
 
-export const Star = styled.div<{ pos: { top: number, left: number }, size: number, delay: number }>`
+export const Star = styled.div<{ top: number, left: number, size: number, delay: number }>`
     position: relative;
-    top: ${p => p.pos.top * 0.01}%;
-    left: ${p => p.pos.left * 0.01}%;
-    width: ${p => p.size};
-    height: ${p => p.size};
+    top: ${p => p.top * 0.01}%;
+    left: ${p => p.left * 0.01}%;
+    width: ${p => p.size}px;
+    height: ${p => p.size}px;
     animation-delay: ${p => p.delay}s;
 `;

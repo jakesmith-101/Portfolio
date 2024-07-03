@@ -27,7 +27,7 @@ const Background: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
 
 const StarGenerator: React.FC<{ count: number }> = ({ count }) => {
     return <Stars className="layer" data-depth="0.3">
-        {[...new Array(count)].map((_, id) => <Star key={id} pos={{ top: getRandomInt(0, 100), left: getRandomInt(0, 100) }} size={getRandomInt(0, 6)} delay={getRandomInt(0, 5)} />)}
+        {[...new Array(count)].map((_, id) => <Star key={id} top={getRandomInt(0, 100)} left={getRandomInt(0, 100)} size={getRandomInt(0, 6)} delay={getRandomInt(0, 5)} />)}
     </Stars>
 }
 
