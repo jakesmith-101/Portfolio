@@ -18,10 +18,10 @@ const Background: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
     return <div id="scene">
         <Sky>
             <StarGenerator count={80} />
-            <div className="layer" data-depth="0">
-                {children}
-            </div>
         </Sky>
+        <div className="cards layer" data-depth="0">
+            {children}
+        </div>
     </div>
 }
 
