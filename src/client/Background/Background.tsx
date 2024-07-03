@@ -1,17 +1,25 @@
 import * as React from 'react';
-import { Lamp, Region, Glass, Bubble } from './BGComps';
+import { Lamp, Region, Glass, Bubble, tAnim } from './BGComps';
+import { Chance } from 'chance';
+const C = Chance();
 
 const Background: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
+    const animTypes: tAnim[] = ["linear", "ease-in", "ease-out", "ease-in-out"];
     // dynamically change data-depth value according to size of div?
     return <Region>
         <Lamp>
             <Glass>
-                <Bubble />
-                <Bubble />
-                <Bubble />
-                <Bubble />
-                <Bubble />
-                <Bubble />
+                {[...new Array(15)].map((_, id) => <Bubble
+                    key={id}
+                    first={C.pickone(animTypes)}
+                    t1={C.integer({ min: 15, max: 60 })}
+                    second={C.pickone(animTypes)}
+                    t2={C.integer({ min: 15, max: 60 })}
+                    third={C.pickone(animTypes)}
+                    t3={C.integer({ min: 15, max: 60 })}
+                    fourth={C.pickone(animTypes)}
+                    t4={C.integer({ min: 15, max: 60 })}
+                />)}
             </Glass>
         </Lamp>
         <div>
