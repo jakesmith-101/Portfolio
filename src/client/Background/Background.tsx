@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Parallax from 'parallax-js';
-import './bg.scss';
+import { Sky, Star, Stars } from './BGComps';
 
 const Background: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
     React.useEffect(() => {
@@ -16,100 +16,26 @@ const Background: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
 
 
     return <div id="scene">
-        <div className="sky">
-            <div className="stars layer" data-depth="0.3">
-                <Stars />
+        <Sky>
+            <StarGenerator count={80} />
+            <div className="layer" data-depth="0">
+                {children}
             </div>
-        </div>
-        <div className="cards layer" data-depth="0">
-            {children}
-        </div>
+        </Sky>
     </div>
 }
 
-const Stars: React.FC<{}> = _ => {
-    return <>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-    </>
+const StarGenerator: React.FC<{ count: number }> = ({ count }) => {
+    return <Stars className="layer" data-depth="0.3">
+        {[...new Array(count)].map((_, id) => <Star key={id} pos={{ top: getRandomInt(0, 100), left: getRandomInt(0, 100) }} size={getRandomInt(0, 6)} delay={getRandomInt(0, 5)} />)}
+    </Stars>
+}
+
+function getRandomInt(min: number, max: number) {
+    if (min < max)
+        return min + Math.floor(Math.random() * (max - min + 1));
+    else
+        return min;
 }
 
 export default Background;
