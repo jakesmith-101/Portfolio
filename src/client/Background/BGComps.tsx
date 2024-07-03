@@ -20,6 +20,7 @@ export const Sky = styled.div`
     left: 0;
     height: 100%;
     width: 100%;
+    overflow: hidden;
     background-color: #c5cfb7; // Old browsers
     background-image: radial-gradient(ellipse, #c5cfb7 0%, #84ad98 20%, #5f9986 39%, #5f9986 50%, #5f9986 60%, #4a8974 72%, #326565 84%, #082d47 100%);
 `;

@@ -14,7 +14,7 @@ const Background: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
         return () => { parallax?.destroy() }
     }, []);
 
-
+    // dynamically change data-depth value according to size of div?
     return <div id="scene">
         <Sky>
             <StarGenerator count={80} />
