@@ -26,7 +26,7 @@ const forog = keyframes`
 export const Lamp = styled.div`
     width: 100vh;
     height: 100vh;
-    margin: 0 auto;
+    margin: 0;
 `;
 
 export const Region = styled.div`
@@ -36,11 +36,10 @@ export const Region = styled.div`
 
 export const Glass = styled.div`
     overflow: hidden;
-    width: 100%;
-    height: 90vh;
+    width: 100vh;
+    height: 100vh;
     position: relative;
     top: -4vh;
-    transform: perspective(100vh) rotateX(12deg);
     filter: contrast(22);
     background: linear-gradient(blue 30%, #60a 80%, #a06 100%);
     box-shadow: inset 0-5vh 1vh 1vh rgba(255, 0, 0, .6), 0 0 2.5px .2px #808;
