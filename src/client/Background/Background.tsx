@@ -9,17 +9,18 @@ const Background: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
     return <Region>
         <Lamp>
             <Glass>
-                {[...new Array(15)].map((_, id) => <Bubble
-                    key={id}
-                    first={C.pickone(animTypes)}
-                    t1={C.integer({ min: 15, max: 60 })}
-                    second={C.pickone(animTypes)}
-                    t2={C.integer({ min: 15, max: 60 })}
-                    third={C.pickone(animTypes)}
-                    t3={C.integer({ min: 15, max: 60 })}
-                    fourth={C.pickone(animTypes)}
-                    t4={C.integer({ min: 15, max: 60 })}
-                />)}
+                { // this is quite intensive to render btw
+                    [...new Array(5)].map((_, id) => <Bubble
+                        key={id}
+                        first={C.pickone(animTypes)}
+                        t1={C.integer({ min: 15, max: 60 })}
+                        second={C.pickone(animTypes)}
+                        t2={C.integer({ min: 15, max: 60 })}
+                        third={C.pickone(animTypes)}
+                        t3={C.integer({ min: 15, max: 60 })}
+                        fourth={C.pickone(animTypes)}
+                        t4={C.integer({ min: 15, max: 60 })}
+                    />)}
             </Glass>
         </Lamp>
         <div>
