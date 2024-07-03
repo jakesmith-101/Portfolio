@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { Lamp, Region, Glass, Bubble, tAnim } from './BGComps';
 import { Chance } from 'chance';
-const C = Chance();
 
 const animTypes: tAnim[] = ["linear", "ease-in", "ease-out", "ease-in-out"];
 const Background: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
-    // dynamically change data-depth value according to size of div?
+    const C = Chance();
+
     return <Region>
         <Lamp>
             <Glass>
