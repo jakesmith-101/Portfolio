@@ -6,27 +6,31 @@ const work = "jakesmith-101"; // `https://api.github.com/users/${work}/repos`
 const games = "ZiarayZ"; //      `https://api.github.com/users/${games}/repos`
 
 const Portfolio: React.FC<{}> = _ => {
-    const [repos, setRepos] = React.useState<RepoType | null>(null);
+    const [workRepos, setWork] = React.useState<RepoType | null>(null);
+    const [gameRepos, setGames] = React.useState<RepoType | null>(null);
     const [error, setError] = React.useState<any | null>(null);
-
-    const repoSetter = React.useCallback((json: any) => setRepos(rep => {
-        if (rep !== null && Array.isArray(json))
-            rep.push(...json);
-        else if (Array.isArray(json))
-            return json;
-        return rep;
-    }), []);
 
     React.useEffect(() => {
         fetch(`https://api.github.com/users/${work}/repos`)
             .then(response => response.json())
-            .then(repoSetter)
+            .then(setWork)
             .catch(setError);
         fetch(`https://api.github.com/users/${games}/repos`)
             .then(response => response.json())
-            .then(repoSetter)
+            .then(setGames)
             .catch(setError);
     }, [work]);
+
+    const repos = React.useMemo((): RepoType | null => {
+        if (workRepos !== null && gameRepos !== null)
+            return [...workRepos, ...gameRepos];
+        else if (workRepos !== null)
+            return workRepos;
+        else if (gameRepos !== null)
+            return gameRepos;
+        else
+            return null;
+    }, [workRepos, gameRepos]);
 
     return <div>
         {error === null ? <div>
