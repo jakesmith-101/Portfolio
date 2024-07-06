@@ -1,6 +1,7 @@
 import { styled, keyframes } from 'styled-components';
 
 export const BGColour = styled.div`
+    position: fixed;
     height: 100vh;
     width: 100vw;
     overflow: hidden;
@@ -19,7 +20,6 @@ const animStar = keyframes`
 
 
 export const StarCurtain = styled.div<{ stars: string, size: number }>`
-    position: fixed;
     width: ${p => p.size}px;
     height: ${p => p.size}px;
     animation: ${animStar} 50s linear infinite;
