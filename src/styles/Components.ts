@@ -9,7 +9,6 @@ export const StyledCards = styled.div`
     flex-wrap: wrap;
     align-items: center;
     padding: 5%;
-    z-index: 1;
 `;
 
 export const StyledCard = styled.div`

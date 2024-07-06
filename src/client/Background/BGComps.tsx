@@ -12,6 +12,7 @@ export const BGOverlay = styled.div`
     height: 100vh;
     width: 100vw;
     background: transparent;
+    z-index: 1;
 `;
 
 
