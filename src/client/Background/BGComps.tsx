@@ -7,10 +7,6 @@ export const BGColour = styled.div`
     background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
 `;
 
-export const Container = styled.div`
-    overflow: scroll;
-`;
-
 
 const animStar = keyframes`
     0% {
