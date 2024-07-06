@@ -16,14 +16,14 @@ const Portfolio: React.FC<{ users: string[] }> = ({ users }) => {
                         if (prev === null) return json;
                         else prev.push(json);
                         return prev;
-                    })
+                    });
                 })
                 .catch(e => {
                     setError(prev => {
                         if (prev === null) return [e];
                         else prev.push(e);
                         return prev;
-                    })
+                    });
                 })
         );
     }, [users.join(",")]);
