@@ -9,7 +9,7 @@ interface CardsProps {
 const Cards: React.FC<CardsProps> = ({ repos }) => {
     return <StyledCards>
         {
-            repos.map(card => <Card key={card.id} repo={card} />)
+            repos.map(card => <Card key={card.id} {...card} />)
         }
     </StyledCards>
 }

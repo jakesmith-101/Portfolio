@@ -2,10 +2,7 @@ import * as React from 'react';
 import { StyledCard } from '../../styles/Components';
 import RepoType from '../../types/Repository';
 
-interface CardProps {
-    repo: RepoType[0];
-}
-const Card: React.FC<CardProps> = React.memo(({ repo: { name, description } }) => {
+const Card: React.FC<RepoType[0]> = React.memo(({ name, description }) => {
     return <StyledCard>
         <h6>{name}</h6>
         <p>{description}</p>
