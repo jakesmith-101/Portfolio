@@ -19,5 +19,5 @@ export const StyledCard = styled.div`
     word-wrap: break-word;
 
     background-color: white;
-    box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 0px 0px rgba(0,0,0,0.5);
 `;
