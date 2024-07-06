@@ -1,5 +1,6 @@
 import { styled } from "styled-components";
 
+export const PlayArea = styled.div``;
 
 // Component Styles
 export const StyledCards = styled.div`

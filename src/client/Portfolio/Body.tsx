@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { PlayArea } from '../../styles/Components';
 import RepoType from '../../types/Repository';
 import Cards from './Cards';
 
@@ -33,9 +34,9 @@ const Portfolio: React.FC<{}> = _ => {
     }, [workRepos, gameRepos]);
 
     return <div>
-        {error === null ? <div>
+        {error === null ? <PlayArea>
             {repos !== null ? <Cards repos={repos} /> : 'Loading...'}
-        </div> : <div>
+        </PlayArea> : <div>
             <h3>Error:</h3>
             {error}
         </div>}
