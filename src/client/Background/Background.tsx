@@ -11,9 +11,9 @@ const random = (max: number, min?: number) => {
         return min;
 }
 const StarBuilder = (n: number) => {
-    let value = `${random(2000)}px ${random(2000)}px #FFF`;
+    let value = `${random(100)}% ${random(100)}% #FFF`;
     for (let i = 2; i < n; i++) {
-        value = `${value} , ${random(2000)}px ${random(2000)}px #FFF`;
+        value = `${value} , ${random(100)}% ${random(100)}% #FFF`;
     }
     return value;
 }

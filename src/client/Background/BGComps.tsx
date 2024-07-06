@@ -31,7 +31,7 @@ export const FirstStarCurtain = styled.div<{ stars: string }>`
     &:after {
         content: " ";
         position: absolute;
-        top: 2000px;
+        top: 100%;
         width: 1px;
         height: 1px;
         background: transparent;
@@ -49,7 +49,7 @@ export const SecondStarCurtain = styled.div<{ stars: string }>`
     &:after {
         content: " ";
         position: absolute;
-        top: 2000px;
+        top: 100%;
         width: 2px;
         height: 2px;
         background: transparent;
@@ -67,7 +67,7 @@ export const ThirdStartCurtain = styled.div<{ stars: string }>`
     &:after
         content: " ";
         position: absolute;
-        top: 2000px;
+        top: 100%;
         width: 3px;
         height: 3px;
         background: transparent;
