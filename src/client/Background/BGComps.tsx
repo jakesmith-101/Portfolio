@@ -4,7 +4,7 @@ export const BGColour = styled.div`
     height: 100%;
     width: 100%;
     overflow: hidden;
-    background-color: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
 `;
 
 export const Container = styled.div`
