@@ -13,6 +13,7 @@ export const BGOverlay = styled.div`
     width: 100vw;
     background: transparent;
     z-index: 1;
+    overflow: scroll;
 `;
 
 
