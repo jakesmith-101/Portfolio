@@ -1,2 +1,2 @@
 # Started with Create React App
-To display my projects
+To display any amount of users' projects
