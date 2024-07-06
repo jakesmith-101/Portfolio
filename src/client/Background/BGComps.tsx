@@ -7,6 +7,12 @@ export const BGColour = styled.div`
     overflow: hidden;
     background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
 `;
+export const BGOverlay = styled.div`
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background: transparent;
+`;
 
 
 const animStar = keyframes`

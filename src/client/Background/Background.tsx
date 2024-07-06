@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BGColour, StarCurtain } from './BGComps';
+import { BGColour, BGOverlay, StarCurtain } from './BGComps';
 
 const random = (max: number, min?: number) => {
     min = min ?? 0;
@@ -25,9 +25,9 @@ const Background: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
             <StarCurtain stars={StarBuilder(200)} size={2} />
             <StarCurtain stars={StarBuilder(100)} size={3} />
         </BGColour>
-        <div>
+        <BGOverlay>
             {children}
-        </div>
+        </BGOverlay>
     </div>
 }
 
