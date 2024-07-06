@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { BGColour, Container, FirstStarCurtain, SecondStarCurtain, ThirdStartCurtain } from './BGComps';
-import { Chance } from 'chance';
 
 const random = (max: number, min?: number) => {
     min = min ?? 0;
@@ -12,16 +11,14 @@ const random = (max: number, min?: number) => {
         return min;
 }
 const StarBuilder = (n: number) => {
-    let value = `${random(100)}% ${random(100)}% #FFF`;
+    let value = `${random(2000)}px ${random(2000)}px #FFF`;
     for (let i = 2; i < n; i++) {
-        value = `${value} , ${random(100)}% ${random(100)}% #FFF`;
+        value = `${value} , ${random(2000)}px ${random(2000)}px #FFF`;
     }
     return value;
 }
 
 const Background: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
-    const C = Chance();
-
     return <BGColour>
         <FirstStarCurtain stars={StarBuilder(700)} />
         <SecondStarCurtain stars={StarBuilder(200)} />
