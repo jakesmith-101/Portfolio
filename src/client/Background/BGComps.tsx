@@ -1,8 +1,8 @@
-import { styled, keyframes, css } from 'styled-components';
+import { styled, keyframes } from 'styled-components';
 
 export const BGColour = styled.div`
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
     overflow: hidden;
     background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
 `;

@@ -19,14 +19,16 @@ const StarBuilder = (n: number) => {
 };
 
 const Background: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
-    return <BGColour>
-        <StarCurtain stars={StarBuilder(700)} size={1} />
-        <StarCurtain stars={StarBuilder(200)} size={2} />
-        <StarCurtain stars={StarBuilder(100)} size={3} />
+    return <div>
+        <BGColour>
+            <StarCurtain stars={StarBuilder(700)} size={1} />
+            <StarCurtain stars={StarBuilder(200)} size={2} />
+            <StarCurtain stars={StarBuilder(100)} size={3} />
+        </BGColour>
         <div>
             {children}
         </div>
-    </BGColour>
+    </div>
 }
 
 
