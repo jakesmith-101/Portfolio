@@ -3,26 +3,29 @@ import { PlayArea } from '../../styles/Components';
 import RepoType from '../../types/Repository';
 import Cards from './Cards';
 
-const work = "jakesmith-101"; // `https://api.github.com/users/${work}/repos`
-const games = "ZiarayZ"; //      `https://api.github.com/users/${games}/repos`
-
 const Portfolio: React.FC<{ users: string[] }> = ({ users }) => {
     const [repos, setRepos] = React.useState<RepoType | null>(null);
     const [error, setError] = React.useState<any[] | null>(null);
 
     React.useEffect(() => {
-        users.forEach(user => {
-            fetch(`https://api.github.com/users/${user}/repos`)
+        users.map(
+            user => fetch(`https://api.github.com/users/${user}/repos`)
                 .then(response => response.json())
-                .then(setRepos)
+                .then(json => {
+                    setRepos(prev => {
+                        if (prev === null) return json;
+                        else prev.push(json);
+                        return prev;
+                    })
+                })
                 .catch(e => {
                     setError(prev => {
                         if (prev === null) return [e];
                         else prev.push(e);
                         return prev;
                     })
-                });
-        });
+                })
+        );
     }, [users.join(",")]);
 
     return <div>
