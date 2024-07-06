@@ -6,32 +6,32 @@ const work = "jakesmith-101"; // `https://api.github.com/users/${work}/repos`
 const games = "ZiarayZ"; //      `https://api.github.com/users/${games}/repos`
 
 const Portfolio: React.FC<{}> = _ => {
-    // plan to have/display an array of "cards" of each project I've done
-
-    const [workRepos, setWork] = React.useState<RepoType | null>(null);
-    const [gameRepos, setGames] = React.useState<RepoType | null>(null);
+    const [repos, setRepos] = React.useState<RepoType | null>(null);
     const [error, setError] = React.useState<any | null>(null);
+
+    const repoSetter = React.useCallback((json: any) => setRepos(rep => {
+        if (rep !== null && Array.isArray(json))
+            rep.push(...json);
+        else if (Array.isArray(json))
+            return json;
+        return rep;
+    }), []);
 
     React.useEffect(() => {
         fetch(`https://api.github.com/users/${work}/repos`)
             .then(response => response.json())
-            .then(setWork)
+            .then(repoSetter)
             .catch(setError);
         fetch(`https://api.github.com/users/${games}/repos`)
             .then(response => response.json())
-            .then(setGames)
+            .then(repoSetter)
             .catch(setError);
     }, [work]);
 
     return <div>
-        {error === null ? <>
-            <div>
-                {workRepos !== null ? <Cards repos={workRepos} /> : 'Loading...'}
-            </div>
-            <div>
-                {gameRepos !== null ? <Cards repos={gameRepos} /> : 'Loading...'}
-            </div>
-        </> : <div>
+        {error === null ? <div>
+            {repos !== null ? <Cards repos={repos} /> : 'Loading...'}
+        </div> : <div>
             <h3>Error:</h3>
             {error}
         </div>}
