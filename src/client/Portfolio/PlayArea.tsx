@@ -10,11 +10,11 @@ const Portfolio: React.FC<{ users: string[] }> = ({ users }) => {
     React.useEffect(() => {
         users.map(
             user => fetch(`https://api.github.com/users/${user}/repos`)
-                .then(response => response.json())
+                .then((response: Response): Promise<RepoType> => response.json()) // making assumptions on Type here, but should be ok for this use case...
                 .then(json => {
                     setRepos(prev => {
                         if (prev === null) return json;
-                        else prev.push(json);
+                        else prev.push(...json);
                         return prev;
                     });
                 })
