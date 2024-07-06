@@ -13,7 +13,6 @@ const Portfolio: React.FC<{ users: string[] }> = ({ users }) => {
                 .then((response: Response): Promise<RepoType> => response.json()) // making assumptions on Type here, but should be ok for this use case...
                 .then(json => {
                     setRepos(prev => {
-                        console.log(prev, json);
                         if (prev === null) return json;
                         else prev.push(...json);
                         return prev;
