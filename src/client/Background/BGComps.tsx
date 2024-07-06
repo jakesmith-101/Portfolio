@@ -21,53 +21,21 @@ const animStar = keyframes`
     }
 `;
 
-const StarCurtain = css<{ stars: string }>`
-    background: transparent;
-    box-shadow: ${p => p.stars};
-`;
-const AfterStarCurtain = css<{ stars: string }>`
-    content: " ";
-    position: absolute;
-    top: 100%;
-    background: transparent;
-    box-shadow: ${p => p.stars};
-`;
 
-export const FirstStarCurtain = styled.div<{ stars: string }>`
-    width: 1px;
-    height: 1px;
+export const StarCurtain = styled.div<{ stars: string, size: number }>`
+    width: ${p => p.size}px;
+    height: ${p => p.size}px;
     animation: ${animStar} 50s linear infinite;
-    ${StarCurtain}
+    background: transparent;
+    box-shadow: ${p => p.stars};
         
     &:after {
-        width: 1px;
-        height: 1px;
-        ${AfterStarCurtain}
-    }
-`;
-
-export const SecondStarCurtain = styled.div<{ stars: string }>`
-    width: 2px;
-    height: 2px;
-    animation: ${animStar} 100s linear infinite;
-    ${StarCurtain}
-
-    &:after {
-        width: 2px;
-        height: 2px;
-        ${AfterStarCurtain}
-    }
-`;
-
-export const ThirdStartCurtain = styled.div<{ stars: string }>`
-    width: 3px;
-    height: 3px;
-    animation: ${animStar} 150s linear infinite;
-    ${StarCurtain}
-
-    &:after {
-        width: 3px;
-        height: 3px;
-        ${AfterStarCurtain}
+        width: ${p => p.size}px;
+        height: ${p => p.size}px;
+        content: " ";
+        position: absolute;
+        top: 100%;
+        background: transparent;
+        box-shadow: ${p => p.stars};
     }
 `;
