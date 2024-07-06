@@ -1,6 +1,8 @@
 import { styled, keyframes } from 'styled-components';
 
 export const BGColour = styled.div`
+    height: 100%;
+    width: 100%;
     overflow: hidden;
     background-color: radial-gradient(ellipse, #1B2735 0%, #090A0F 100%);
 `;
