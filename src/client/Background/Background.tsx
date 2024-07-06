@@ -11,24 +11,23 @@ const random = (max: number, min?: number) => {
         return min;
 }
 
-const Background: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
+const Background: React.FC<React.PropsWithChildren<{ bounds: { width: number, height: number } | null }>> = ({ bounds, children }) => {
     const StarBuilder = React.useCallback((n: number) => {
-        const container = document.getElementById("children");
-        const width = container?.clientWidth ?? 2000;
-        const height = container?.clientHeight ?? 2000;
+        const width = bounds?.width ?? 2000;
+        const height = bounds?.height ?? 2000;
 
         let value = `${random(100) * width / 100}px ${random(100) * height / 100}px #FFF`;
         for (let i = 1; i < n; i++) {
             value = `${value} , ${random(100) * width / 100}px ${random(100) * height / 100}px #FFF`;
         }
         return value;
-    }, [document.getElementById]);
+    }, [bounds?.width, bounds?.height]);
 
     return <BGColour>
         <StarCurtain stars={StarBuilder(700)} size={1} />
         <StarCurtain stars={StarBuilder(200)} size={2} />
         <StarCurtain stars={StarBuilder(100)} size={3} />
-        <div id="children">
+        <div>
             {children}
         </div>
     </BGColour>
