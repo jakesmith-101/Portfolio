@@ -18,7 +18,7 @@ const Background: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
         const height = container?.clientHeight ?? 2000;
 
         let value = `${random(100) * width / 100}px ${random(100) * height / 100}px #FFF`;
-        for (let i = 2; i < n; i++) {
+        for (let i = 1; i < n; i++) {
             value = `${value} , ${random(100) * width / 100}px ${random(100) * height / 100}px #FFF`;
         }
         return value;
