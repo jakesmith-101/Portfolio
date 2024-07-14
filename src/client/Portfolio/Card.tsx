@@ -16,7 +16,7 @@ const Card: React.FC<RepoType[0]> = React.memo(props => {
             if (card !== null) {
                 card.style.transform = `rotateX(${yValue}deg) rotateY(${-xValue}deg)`;
 
-                /* Parallax for children:
+                /* Parallax for children, probably for images?:
                 const texts = Array.from(card.children);
                 [].forEach.call(texts, (text: Element) => {
                     if (text.tagName.toUpperCase() === "DIV")
