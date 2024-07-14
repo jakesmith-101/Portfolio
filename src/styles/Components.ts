@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import { css, styled } from "styled-components";
 
 // Background Styles
 export const BGColour = styled.div`
@@ -27,19 +27,21 @@ export const StyledCards = styled.div`
     align-items: center;
     padding: 5%;
 `;
-export const CardShadow = styled.div`
+
+const CardStyle = css`
     width: 256px;
     height: 356px;
     border-radius: 10px;
+`;
+export const CardShadow = styled.div`
+    ${CardStyle}
     overflow: hidden;
 
     background: transparent;
     box-shadow: 0px 10px 0px 0px rgba(0,0,0,0.5);
 `;
-
 export const StyledCard = styled.div`
-    width: 100%;
-    height: 100%;
+    ${CardStyle}
 
     padding: 8px;
     word-wrap: break-word;
