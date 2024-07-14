@@ -33,6 +33,7 @@ export const CardShadow = styled.div`
     border-radius: 15px;
     background: ${shadowColour};
     box-shadow: 0px 0px 0px 0px ${shadowColour};
+    perspective: 1800px;
 `;
 export const StyledCard = styled.div`
     display: inline-block;
@@ -48,9 +49,9 @@ export const StyledCard = styled.div`
     transform-style: preserve-3d;
 
     background-color: white;
-    transform: translatez(35px);
+    transform: translateZ(35px);
     transition: transform 200ms ease-out;
     &:hover {
-        transform: translatez(60px);
+        transform: translateZ(60px);
     }
 `;
