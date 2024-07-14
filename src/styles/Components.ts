@@ -6,7 +6,7 @@ export const BGColour = styled.div`
     height: 100vh;
     width: 100vw;
     overflow: hidden;
-    background: radial-gradient(ellipse at bottom, #C6426E 0%, #642B73 100%);
+    background: radial-gradient(ellipse at bottom, #642B73 0%, #C6426E 100%);
 `;
 export const BGOverlay = styled.div`
     position: fixed;
