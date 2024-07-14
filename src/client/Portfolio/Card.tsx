@@ -13,7 +13,6 @@ const Card: React.FC<RepoType[0]> = React.memo(props => {
         }
 
         setTimeout(window.requestAnimationFrame(() => {
-
             const card = document.getElementById(`${id}`);
             if (card !== null) {
                 const yValue = calcValue(y - card.clientTop, card.clientHeight);
