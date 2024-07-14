@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { StyledCard } from '../../styles/Components';
+import { StyledCard, CardShadow } from '../../styles/Components';
 import RepoType from '../../types/Repository';
 import { calcValue } from '../Parallax/Functions';
 
@@ -13,7 +13,7 @@ const Card: React.FC<RepoType[0]> = React.memo(props => {
             window.cancelAnimationFrame(timeout);
 
         setTimeout(window.requestAnimationFrame(() => {
-            const card = document.getElementById(`${id}`);
+            const card = document.getElementById(`card_${id}`);
             if (card !== null) {
                 const { top, left } = card.getBoundingClientRect();
                 const yValue = calcValue(y - top, card.clientHeight);
@@ -37,7 +37,7 @@ const Card: React.FC<RepoType[0]> = React.memo(props => {
             window.cancelAnimationFrame(timeout);
 
         setTimeout(window.requestAnimationFrame(() => {
-            const card = document.getElementById(`${id}`);
+            const card = document.getElementById(`card_${id}`);
             if (card !== null) {
                 card.style.transform = `rotateX(0deg) rotateY(0deg)`;
 
@@ -68,13 +68,15 @@ const Card: React.FC<RepoType[0]> = React.memo(props => {
         };
     }, [id]);
 
-    return <StyledCard id={`${id}`}>
-        <div>
-            <h5><a href={owner.html_url}>{typeof owner.name === "string" ? `@${owner.name}` : owner.login}</a></h5>
-            <h6><a href={html_url}>{name}</a></h6>
-            <p>{description}</p>
-        </div>
-    </StyledCard>;
+    return <CardShadow id={`${id}`}>
+        <StyledCard id={`card_${id}`}>
+            <div>
+                <h5><a href={owner.html_url}>{typeof owner.name === "string" ? `@${owner.name}` : owner.login}</a></h5>
+                <h6><a href={html_url}>{name}</a></h6>
+                <p>{description}</p>
+            </div>
+        </StyledCard>
+    </CardShadow>;
 })
 
 export default Card;

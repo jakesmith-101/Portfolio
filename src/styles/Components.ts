@@ -27,15 +27,22 @@ export const StyledCards = styled.div`
     align-items: center;
     padding: 5%;
 `;
-
-export const StyledCard = styled.div`
+export const CardShadow = styled.div`
     width: 256px;
     height: 356px;
     border-radius: 10px;
+    overflow: hidden;
+
+    background: transparent;
+    box-shadow: 0px 10px 0px 0px rgba(0,0,0,0.5);
+`;
+
+export const StyledCard = styled.div`
+    width: 100%;
+    height: 100%;
 
     padding: 8px;
     word-wrap: break-word;
 
     background-color: white;
-    box-shadow: 0px 10px 0px 0px rgba(0,0,0,0.5);
 `;
