@@ -22,7 +22,7 @@ export const PlayArea = styled.div``;
 
 export const StyledCards = styled.div`
     display: flex;
-    gap: 32px;
+    gap: 64px;
     flex-wrap: wrap;
     align-items: center;
     padding: 5%;
@@ -31,7 +31,8 @@ export const StyledCards = styled.div`
 const CardStyle = css`
     width: 256px;
     height: 356px;
-    border-radius: 10px;
+    padding: 10px;
+    border-radius: 15px;
 `;
 export const CardShadow = styled.div`
     ${CardStyle}
@@ -42,7 +43,6 @@ export const CardShadow = styled.div`
 export const StyledCard = styled.div`
     ${CardStyle}
 
-    padding: 8px;
     word-wrap: break-word;
 
     perspective: 1800px;
