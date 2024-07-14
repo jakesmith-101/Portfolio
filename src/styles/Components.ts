@@ -36,7 +36,7 @@ const CardStyle = css`
 export const CardShadow = styled.div`
     ${CardStyle}
 
-    background: transparent;
+    background: rgba(0,0,0,0.5);
     box-shadow: 0px 10px 0px 0px rgba(0,0,0,0.5);
 `;
 export const StyledCard = styled.div`
@@ -44,6 +44,10 @@ export const StyledCard = styled.div`
 
     padding: 8px;
     word-wrap: break-word;
+
+    perspective: 1800px;
+    transform-origin: 50% 50%;
+    transform-style: preserve-3d;
 
     background-color: white;
 `;
