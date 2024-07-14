@@ -34,6 +34,7 @@ export const CardShadow = styled.div`
     box-shadow: 0px 10px 0px 0px rgba(0,0,0,0.5);
 `;
 export const StyledCard = styled.div`
+    display: inline-block;
     border-radius: 15px;
     width: 256px;
     height: 356px;
