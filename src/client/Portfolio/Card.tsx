@@ -20,11 +20,13 @@ const Card: React.FC<RepoType[0]> = React.memo(props => {
                 const xValue = calcValue(x - left, card.clientWidth);
                 card.style.transform = `rotateX(${yValue}deg) rotateY(${-xValue}deg)`;
 
+                /* Parallax for children:
                 const texts = Array.from(card.children);
                 [].forEach.call(texts, (text: Element) => {
                     if (text.tagName.toUpperCase() === "DIV")
                         (text as HTMLDivElement).style.transform = `translateX(${xValue}px) translateY(${yValue}px)`;
                 });
+                */
             }
         }));
     }, [id, timeout, setTimeout]);
@@ -39,11 +41,13 @@ const Card: React.FC<RepoType[0]> = React.memo(props => {
             if (card !== null) {
                 card.style.transform = `rotateX(0deg) rotateY(0deg)`;
 
+                /* Parallax for children:
                 const texts = Array.from(card.children);
                 [].forEach.call(texts, (text: Element) => {
                     if (text.tagName.toUpperCase() === "DIV")
                         (text as HTMLDivElement).style.transform = `translateX(0px) translateY(0px)`;
                 });
+                */
             }
         }));
     }, [id, timeout, setTimeout]);
