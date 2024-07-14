@@ -28,17 +28,40 @@ const Card: React.FC<RepoType[0]> = React.memo(props => {
         }));
     }, [id, timeout, setTimeout]);
 
+    const handleMouseLeave = React.useCallback(() => {
+        if (timeout) {
+            window.cancelAnimationFrame(timeout);
+        }
+
+        setTimeout(window.requestAnimationFrame(() => {
+            const card = document.getElementById(`${id}`);
+            if (card !== null) {
+                card.style.transform = `rotateX(0deg) rotateY(0deg)`;
+
+                const texts = Array.from(card.children);
+                [].forEach.call(texts, (text: Element) => {
+                    if (text.tagName.toUpperCase() === "DIV")
+                        (text as HTMLDivElement).style.transform = `translateX(0px) translateY(0px)`;
+                });
+            }
+        }));
+    }, [id, timeout, setTimeout]);
+
     React.useEffect(() => {
-        const card = document.getElementById("card");
-        if (card !== null)
+        const card = document.getElementById(`${id}`);
+        if (card !== null) {
             card.addEventListener('mousemove', handleMouseMove, false);
+            card.addEventListener('mouseleave', handleMouseLeave, false);
+        }
 
         // cleanup this component
         return () => {
-            if (card !== null)
+            if (card !== null) {
                 card.removeEventListener('mousemove', handleMouseMove, false);
+                card.removeEventListener('mouseleave', handleMouseLeave, false);
+            }
         };
-    }, []);
+    }, [id]);
 
     return <StyledCard id={`${id}`}>
         <div>
