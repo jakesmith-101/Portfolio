@@ -18,12 +18,12 @@ const Card: React.FC<RepoType[0]> = React.memo(props => {
                 const { top, left } = card.getBoundingClientRect();
                 const yValue = calcValue(y - top, card.clientHeight);
                 const xValue = calcValue(x - left, card.clientWidth);
-                card.style.transform = `rotateX(${yValue}deg) rotateY(${xValue}deg)`;
+                card.style.transform = `rotateX(${yValue}deg) rotateY(${-xValue}deg)`;
 
                 const texts = Array.from(card.children);
                 [].forEach.call(texts, (text: Element) => {
                     if (text.tagName.toUpperCase() === "DIV")
-                        (text as HTMLDivElement).style.transform = `translateX(${-xValue}px) translateY(${yValue}px)`;
+                        (text as HTMLDivElement).style.transform = `translateX(${xValue}px) translateY(${yValue}px)`;
                 });
             }
         }));
