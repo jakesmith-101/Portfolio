@@ -1,8 +1,25 @@
 import { styled } from "styled-components";
 
-export const PlayArea = styled.div``;
+// Background Styles
+export const BGColour = styled.div`
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background: radial-gradient(ellipse at bottom, #C6426E 0%, #642B73 100%);
+`;
+export const BGOverlay = styled.div`
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background: transparent;
+    z-index: 1;
+    overflow: auto;
+`;
 
 // Component Styles
+export const PlayArea = styled.div``;
+
 export const StyledCards = styled.div`
     display: flex;
     gap: 32px;
