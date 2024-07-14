@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import { css, styled } from "styled-components";
 
 // Background Styles
 export const BGColour = styled.div`
@@ -28,10 +28,11 @@ export const StyledCards = styled.div`
     padding: 5%;
 `;
 
+const shadowColour = css`rgba(0,0,0,0.33)`
 export const CardShadow = styled.div`
     border-radius: 15px;
-    background: rgba(0,0,0,0.5);
-    box-shadow: 0px 10px 0px 0px rgba(0,0,0,0.33);
+    background: ${shadowColour};
+    box-shadow: 0px 10px 0px 0px ${shadowColour};
 `;
 export const StyledCard = styled.div`
     display: inline-block;
