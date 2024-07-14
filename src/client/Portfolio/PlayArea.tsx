@@ -8,8 +8,8 @@ const Portfolio: React.FC<{ users: string[] }> = ({ users }) => {
     const [error, setError] = React.useState<any[] | null>(null);
 
     React.useEffect(() => {
-        users.map(
-            async user => {
+        (async () => {
+            for (const user in users) {
                 try {
                     const response = await fetch(`https://api.github.com/users/${user}/repos`);
                     const json: RepoType = await response.json(); // making assumptions on Type here, but should be ok for this use case...
@@ -26,7 +26,7 @@ const Portfolio: React.FC<{ users: string[] }> = ({ users }) => {
                     });
                 }
             }
-        );
+        })()
     }, [users.join(",")]);
 
     return <div>
