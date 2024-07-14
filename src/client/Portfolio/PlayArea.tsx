@@ -5,35 +5,16 @@ import Cards from './Cards';
 
 const Portfolio: React.FC<{ users: string[] }> = ({ users }) => {
     const [repos, setRepos] = React.useState<RepoType | null>(null);
-    const [error, setError] = React.useState<any[] | null>(null);
+    const [error, setError] = React.useState<any | null>(null);
 
     React.useEffect(() => {
         (async () => {
-            for (let i = 0; i < users.length; i++) {
-                const user = users.at(i);
-                if (user !== undefined) {
-                    try {
-                        const response = await fetch(`https://api.github.com/users/${user}/repos`);
-                        const json: RepoType = await response.json(); // making assumptions on Type here, but should be ok for this use case...
-                        setRepos(prev => {
-                            if (prev === null) return json;
-                            else prev.push(...json);
-                            return prev;
-                        });
-                    } catch (e) {
-                        setError(prev => {
-                            if (prev === null) return [e];
-                            else prev.push(e);
-                            return prev;
-                        });
-                    }
-                } else {
-                    setError(prev => {
-                        if (prev === null) return [new RangeError("Index out of range")];
-                        else prev.push(new RangeError("Index out of range"));
-                        return prev;
-                    })
-                }
+            try {
+                const userRepos = await Promise.all(users.map(user => fetch(`https://api.github.com/users/${user}/repos`)));
+                const json: RepoType[] = await Promise.all(userRepos.map(repos => repos.json())); // making assumptions on Type here, but should be ok for this use case...
+                setRepos(json.flat());
+            } catch (e) {
+                setError(e);
             }
         })();
     }, [users.join(",")]);
@@ -43,7 +24,7 @@ const Portfolio: React.FC<{ users: string[] }> = ({ users }) => {
             {repos !== null ? <Cards repos={repos} /> : 'Loading...'}
         </PlayArea> : <div>
             <h3>Error:</h3>
-            {error.map((e, id) => <div key={id}>{e}</div>)}
+            <div>{error}</div>
         </div>}
     </div>
 }
