@@ -31,7 +31,7 @@ export const StyledCards = styled.div`
 export const CardShadow = styled.div`
     border-radius: 15px;
     background: rgba(0,0,0,0.5);
-    box-shadow: 0px 10px 0px 0px rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 0px 0px rgba(0,0,0,0.33);
 `;
 export const StyledCard = styled.div`
     display: inline-block;
