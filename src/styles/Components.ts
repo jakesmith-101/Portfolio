@@ -32,7 +32,7 @@ const shadowColour = `rgba(0,0,0,0.33)`;
 export const CardShadow = styled.div`
     border-radius: 15px;
     background: ${shadowColour};
-    box-shadow: 0px 10px 0px 0px ${shadowColour};
+    box-shadow: 0px 0px 0px 0px ${shadowColour};
 `;
 export const StyledCard = styled.div`
     display: inline-block;
