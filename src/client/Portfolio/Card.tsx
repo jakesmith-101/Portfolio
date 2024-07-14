@@ -1,7 +1,10 @@
 import * as React from 'react';
 import { StyledCard, CardShadow } from '../../styles/Components';
 import RepoType from '../../types/Repository';
-import { calcValue } from '../Parallax/Functions';
+
+
+const range = 100;
+const calcValue = (a: number, b: number) => (a / b * range - range / 2).toFixed(1);
 
 const Card: React.FC<RepoType[0]> = React.memo(props => {
     const { name, description, owner, html_url, id } = props;

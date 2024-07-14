@@ -46,4 +46,7 @@ export const StyledCard = styled.div`
     transform-style: preserve-3d;
 
     background-color: white;
+    &:hover {
+        transform: translatez(60px);
+    }
 `;
