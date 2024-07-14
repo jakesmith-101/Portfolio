@@ -4,7 +4,7 @@ import RepoType from '../../types/Repository';
 import { calcValue } from '../Parallax/Functions';
 
 const Card: React.FC<RepoType[0]> = React.memo(props => {
-    const { name, description, owner, html_url } = props;
+    const { name, description, owner, html_url, id } = props;
     const [timeout, setTimeout] = React.useState<number>();
 
     const handleMouseMove = React.useCallback(({ x, y }: { x: number, y: number }) => {
@@ -16,7 +16,7 @@ const Card: React.FC<RepoType[0]> = React.memo(props => {
             const yValue = calcValue(y, window.innerHeight);
             const xValue = calcValue(x, window.innerWidth);
 
-            const card = document.getElementById("card");
+            const card = document.getElementById(`${id}`);
             if (card !== null) {
                 card.style.transform = `rotateX(${yValue}deg) rotateY(${xValue}deg)`;
 
@@ -27,7 +27,7 @@ const Card: React.FC<RepoType[0]> = React.memo(props => {
                 });
             }
         }));
-    }, [timeout, setTimeout]);
+    }, [id, timeout, setTimeout]);
 
     React.useEffect(() => {
         const card = document.getElementById("card");
@@ -41,7 +41,7 @@ const Card: React.FC<RepoType[0]> = React.memo(props => {
         };
     }, []);
 
-    return <StyledCard id="card">
+    return <StyledCard id={`${id}`}>
         <div>
             <h5><a href={owner.html_url}>{typeof owner.name === "string" ? `@${owner.name}` : owner.login}</a></h5>
             <h6><a href={html_url}>{name}</a></h6>
