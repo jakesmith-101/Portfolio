@@ -29,19 +29,18 @@ export const StyledCards = styled.div`
 `;
 
 const CardStyle = css`
-    width: 256px;
-    height: 356px;
     padding: 10px;
     border-radius: 15px;
 `;
 export const CardShadow = styled.div`
     ${CardStyle}
-
     background: rgba(0,0,0,0.5);
     box-shadow: 0px 10px 0px 0px rgba(0,0,0,0.5);
 `;
 export const StyledCard = styled.div`
     ${CardStyle}
+    width: 256px;
+    height: 356px;
 
     word-wrap: break-word;
 
