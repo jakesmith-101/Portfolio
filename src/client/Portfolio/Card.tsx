@@ -3,7 +3,7 @@ import { StyledCard, CardShadow } from '../../styles/Components';
 import RepoType from '../../types/Repository';
 
 
-const range = 80;
+const range = 40;
 const calcValue = (a: number, b: number) => (a / b * range - range / 2).toFixed(1);
 
 const Card: React.FC<RepoType[0]> = React.memo(props => {
