@@ -28,7 +28,7 @@ export const StyledCards = styled.div`
     padding: 5%;
 `;
 
-const shadowColour = css`rgba(0,0,0,0.33)`
+const shadowColour = `rgba(0,0,0,0.33)`;
 export const CardShadow = styled.div`
     border-radius: 15px;
     background: ${shadowColour};
