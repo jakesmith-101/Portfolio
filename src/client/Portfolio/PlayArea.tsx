@@ -26,7 +26,7 @@ const Portfolio: React.FC<{ users: string[] }> = ({ users }) => {
                     });
                 }
             }
-        })()
+        })();
     }, [users.join(",")]);
 
     return <div>
