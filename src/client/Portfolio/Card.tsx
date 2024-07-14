@@ -15,8 +15,8 @@ const Card: React.FC<RepoType[0]> = React.memo(props => {
         setTimeout(window.requestAnimationFrame(() => {
             const card = document.getElementById(`${id}`);
             if (card !== null) {
-                const yValue = calcValue(y, window.innerHeight);
-                const xValue = calcValue(x, window.innerWidth);
+                const yValue = calcValue(y - card.clientTop, card.clientHeight);
+                const xValue = calcValue(x - card.clientLeft, card.clientWidth);
                 card.style.transform = `rotateX(${yValue}deg) rotateY(${xValue}deg)`;
 
                 const texts = Array.from(card.children);
