@@ -46,6 +46,8 @@ export const StyledCard = styled.div`
     transform-style: preserve-3d;
 
     background-color: white;
+    transform: translatez(35px);
+    transition: transform 200ms ease-out;
     &:hover {
         transform: translatez(60px);
     }
