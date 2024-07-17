@@ -63,7 +63,7 @@ export const CardContent = styled.div`
     width: 100%;
     height: 100%;
 
-    > * :last-of-type {
+    *:last-of-type {
         margin-top: auto;
     }
 `;
