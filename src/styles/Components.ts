@@ -63,6 +63,10 @@ export const CardContent = styled.div`
     width: 100%;
     height: 100%;
 
+    * {
+        margin: 0;
+    }
+
     > * :last-of-type {
         margin-top: auto;
     }
