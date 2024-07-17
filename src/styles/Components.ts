@@ -58,6 +58,7 @@ export const StyledCard = styled.div`
 
 export const CardLabel = styled.div`
     display: flex;
+    justify-content: space-between;
     align-self: stretch;
 `;
 export const CardContent = styled.div`
@@ -76,6 +77,8 @@ export const CardContent = styled.div`
 export const CardExpansion = styled.h6`
     margin: 0;
     justify-self: center;
+    margin-left: auto;
+    margin-right: auto;
 `;
 
 export const CardDescription = styled.p`
