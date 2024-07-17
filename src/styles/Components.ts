@@ -56,6 +56,10 @@ export const StyledCard = styled.div`
     }
 `;
 
+export const CardLabel = styled.div`
+    display: flex;
+    align-self: stretch;
+`;
 export const CardContent = styled.div`
     display: flex;
     flex-direction: column;
@@ -64,29 +68,30 @@ export const CardContent = styled.div`
     width: 100%;
     height: 100%;
 
-    *:last-of-type {
+    ${CardLabel}:last-of-type {
         margin-top: auto;
     }
 `;
+
 export const CardExpansion = styled.h6`
     margin: 0;
     justify-self: center;
 `;
+
 export const CardDescription = styled.p`
     align-self: stretch;
 `;
-export const CardLabel = styled.div`
-    display: flex;
-    align-self: stretch;
-`;
+
 export const CardName = styled.h5`
     margin: 0;
     justify-self: stretch;
 `;
+
 export const CardCost = styled.h5`
     margin: 0;
     justify-self: right;
 `;
+
 export const CardAttack = styled.h5`
     margin: 0;
     justify-self: left;
