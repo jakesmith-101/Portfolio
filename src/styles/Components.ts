@@ -79,6 +79,7 @@ export const CardExpansion = styled.h6`
 `;
 
 export const CardDescription = styled.p`
+    margin: 0;
     align-self: stretch;
 `;
 
