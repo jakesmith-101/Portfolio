@@ -55,3 +55,25 @@ export const StyledCard = styled.div`
         transform: translateZ(60px);
     }
 `;
+
+export const CardContent = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+`;
+export const CardExpansion = styled.h6`
+    margin-top: auto;
+`;
+export const CardDescription = styled.p`
+    justify-self: stretch;
+`;
+export const CardLabel = styled.div`
+    display: flex;
+    justify-self: stretch;
+`;
+export const CardName = styled.h5`
+    justify-self: left;
+`;
+export const CardCost = styled.h5`
+    justify-self: right;
+`;
