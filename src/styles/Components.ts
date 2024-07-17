@@ -62,9 +62,13 @@ export const CardContent = styled.div`
     align-content: center;
     width: 100%;
     height: 100%;
+
+    > * :last-of-type {
+        margin-top: auto;
+    }
 `;
 export const CardExpansion = styled.h6`
-    margin-top: auto;
+    justify-self: center;
 `;
 export const CardDescription = styled.p`
     align-self: stretch;

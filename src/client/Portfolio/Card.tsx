@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { StyledCard, CardShadow, CardContent, CardName, CardExpansion, CardDescription } from '../../styles/Components';
+import { StyledCard, CardShadow, CardContent, CardName, CardExpansion, CardDescription, CardLabel } from '../../styles/Components';
 import RepoType from '../../types/Repository';
 
 
@@ -74,13 +74,22 @@ const Card: React.FC<RepoType[0]> = React.memo(props => {
     return <CardShadow id={`${id}`}>
         <StyledCard id={`card_${id}`}>
             <CardContent>
-                <CardName>
-                    <a href={html_url}>{name}</a>
-                </CardName>
+                <CardLabel>
+                    {/* CARD TYPE??? */}
+                    <CardName>
+                        <a href={html_url}>{name}</a>
+                    </CardName>
+                    {/* COST */}
+                </CardLabel>
+                {/* ICON */}
                 <CardDescription>{description}</CardDescription>
-                <CardExpansion>
-                    <a href={owner.html_url}>{typeof owner.name === "string" ? `@${owner.name}` : `@${owner.login}`}</a>
-                </CardExpansion>
+                <CardLabel>
+                    {/* ATTACK */}
+                    <CardExpansion>
+                        <a href={owner.html_url}>{typeof owner.name === "string" ? `@${owner.name}` : `@${owner.login}`}</a>
+                    </CardExpansion>
+                    {/* HEALTH */}
+                </CardLabel>
             </CardContent>
         </StyledCard>
     </CardShadow>;
