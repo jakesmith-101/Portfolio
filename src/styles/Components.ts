@@ -63,15 +63,12 @@ export const CardContent = styled.div`
     width: 100%;
     height: 100%;
 
-    * {
-        margin: 0;
-    }
-
     > * :last-of-type {
         margin-top: auto;
     }
 `;
 export const CardExpansion = styled.h6`
+    margin: 0;
     justify-self: center;
 `;
 export const CardDescription = styled.p`
@@ -82,8 +79,18 @@ export const CardLabel = styled.div`
     align-self: stretch;
 `;
 export const CardName = styled.h5`
+    margin: 0;
     justify-self: stretch;
 `;
 export const CardCost = styled.h5`
+    margin: 0;
+    justify-self: right;
+`;
+export const CardAttack = styled.h5`
+    margin: 0;
+    justify-self: left;
+`;
+export const CardHealth = styled.h5`
+    margin: 0;
     justify-self: right;
 `;
