@@ -59,20 +59,22 @@ export const StyledCard = styled.div`
 export const CardContent = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-content: center;
+    width: 100%;
+    height: 100%;
 `;
 export const CardExpansion = styled.h6`
     margin-top: auto;
 `;
 export const CardDescription = styled.p`
-    justify-self: stretch;
+    align-self: stretch;
 `;
 export const CardLabel = styled.div`
     display: flex;
-    justify-self: stretch;
+    align-self: stretch;
 `;
 export const CardName = styled.h5`
-    justify-self: left;
+    justify-self: stretch;
 `;
 export const CardCost = styled.h5`
     justify-self: right;
