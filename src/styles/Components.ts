@@ -25,6 +25,7 @@ export const StyledCards = styled.div`
     gap: 64px;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     padding: 5%;
 `;
 
