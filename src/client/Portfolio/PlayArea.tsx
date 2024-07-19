@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PlayArea } from '../../styles/Components';
+import { CardShadow, PlayArea, StyledCards } from '../../styles/Components';
 import RepoType from '../../types/Repository';
 import Cards from './Cards';
 
@@ -21,6 +21,9 @@ const Portfolio: React.FC<{ users: string[] }> = ({ users }) => {
 
     return <div>
         {error === null ? <PlayArea>
+            <StyledCards>
+                <CardShadow id="selected" />
+            </StyledCards>
             {repos !== null ? <Cards repos={repos} /> : 'Loading...'}
         </PlayArea> : <div>
             <h3>Error:</h3>
