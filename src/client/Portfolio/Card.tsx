@@ -21,7 +21,7 @@ const Card: React.FC<RepoType[0]> = React.memo(props => {
                 const { top, left } = card.getBoundingClientRect();
                 const yValue = calcValue(y - top, card.clientHeight);
                 const xValue = calcValue(x - left, card.clientWidth);
-                card.style.transform = `translateY(-10px) translateZ(60px) rotateX(${-yValue}deg) rotateY(${xValue}deg)`;
+                card.style.transform = `translateY(-25px) translateZ(60px) rotateX(${-yValue}deg) rotateY(${xValue}deg)`;
 
                 /* Parallax for children, probably for images?:
                 const texts = Array.from(card.children);
