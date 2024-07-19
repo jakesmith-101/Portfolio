@@ -55,11 +55,7 @@ export const StyledCard = styled.div`
     transform-style: preserve-3d;
 
     background-color: white;
-    transform: translateZ(0px) translateY(0px);
     transition: transform 200ms ease-out;
-    &:hover {
-        transform: translateZ(60px) translateY(-10px);
-    }
 `;
 
 export const CardLabel = styled.div`

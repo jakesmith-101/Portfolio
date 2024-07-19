@@ -21,7 +21,7 @@ const Card: React.FC<RepoType[0]> = React.memo(props => {
                 const { top, left } = card.getBoundingClientRect();
                 const yValue = calcValue(y - top, card.clientHeight);
                 const xValue = calcValue(x - left, card.clientWidth);
-                card.style.transform = `rotateX(${-yValue}deg) rotateY(${xValue}deg)`;
+                card.style.transform = `rotateX(${-yValue}deg) rotateY(${xValue}deg) translateY(-10px) translateZ(60px)`;
 
                 /* Parallax for children, probably for images?:
                 const texts = Array.from(card.children);
@@ -42,7 +42,7 @@ const Card: React.FC<RepoType[0]> = React.memo(props => {
         setTimeout(window.requestAnimationFrame(() => {
             const card = document.getElementById(`card_${id}`);
             if (card !== null) {
-                card.style.transform = `rotateX(0deg) rotateY(0deg)`;
+                card.style.transform = `rotateX(0deg) rotateY(0deg) translateY(0px) translateZ(0px)`;
 
                 /* Parallax for children, probably for images?:
                 const texts = Array.from(card.children);
