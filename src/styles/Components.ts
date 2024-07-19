@@ -30,10 +30,13 @@ export const StyledCards = styled.div`
 `;
 
 const shadowColour = `rgba(0,0,0,0.33)`;
+const cardWidth = 256;
+const cardHeight = 356;
+const cardPadding = 10;
 export const CardShadow = styled.div`
     border-radius: 15px;
-    width: 256px;
-    height: 356px;
+    width: ${cardWidth + 2 * cardPadding}px;
+    height: ${cardHeight + 2 * cardPadding}px;
     background: ${shadowColour};
     box-shadow: 0px 0px 0px 0px ${shadowColour};
     perspective: 1800px;
@@ -41,9 +44,9 @@ export const CardShadow = styled.div`
 export const StyledCard = styled.div`
     display: inline-block;
     border-radius: 15px;
-    width: 256px;
-    height: 356px;
-    padding: 10px;
+    width: ${cardWidth}px;
+    height: ${cardHeight}px;
+    padding: ${cardPadding}px;
 
     word-wrap: break-word;
 
