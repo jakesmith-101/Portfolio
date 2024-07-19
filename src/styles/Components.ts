@@ -31,6 +31,8 @@ export const StyledCards = styled.div`
 const shadowColour = `rgba(0,0,0,0.33)`;
 export const CardShadow = styled.div`
     border-radius: 15px;
+    width: 256px;
+    height: 356px;
     background: ${shadowColour};
     box-shadow: 0px 0px 0px 0px ${shadowColour};
     perspective: 1800px;
